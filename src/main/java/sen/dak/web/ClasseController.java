@@ -6,6 +6,7 @@ import sen.dak.entities.Classe;
 import sen.dak.service.ClasseService;
 
 import java.util.Collection;
+import java.util.Optional;
 
 @RestController
 public class ClasseController {
@@ -14,6 +15,11 @@ public class ClasseController {
      @GetMapping("/classe")
      public Collection<Classe> getAllClasse(){
          return classeService.getAllClasse();
+     }
+
+     @GetMapping("/classe/{id}")
+     public Optional<Classe> getClasse(@PathVariable Long id){
+         return classeService.getClasse(id);
      }
 
      @PostMapping("/classe")
@@ -26,4 +32,8 @@ public class ClasseController {
          return classeService.updateClasse(classe);
      }
 
+     @DeleteMapping("/classe/{id}")
+    public void deleteClasse(@PathVariable Long id){
+         classeService.deleteClasse(id);
+     }
 }

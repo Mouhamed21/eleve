@@ -6,6 +6,7 @@ import sen.dak.entities.Classe;
 import sen.dak.persistence.ClasseRepository;
 
 import java.util.Collection;
+import java.util.Optional;
 
 @Service
 public class ClasseService {
@@ -18,7 +19,15 @@ public class ClasseService {
         return classeRepository.save(classe);
     }
 
+    public Optional<Classe>  getClasse(Long id){
+        return classeRepository.findById(id);
+    }
+
     public Classe updateClasse(Classe classe){
         return classeRepository.save(classe);
+    }
+
+    public void deleteClasse(Long id){
+        classeRepository.deleteById(id);
     }
 }

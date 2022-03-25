@@ -1,7 +1,10 @@
 package sen.dak.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 public class Eleve {
@@ -12,7 +15,9 @@ public class Eleve {
      String nom;
     @Column
      int age;
-
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonBackReference
+    Classe classe;
     public Eleve() {
     }
 

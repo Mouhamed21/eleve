@@ -24,7 +24,7 @@ public class EleveService {
         return eleveRepository.save(eleve);
     }
 
-    public Eleve updateEleve(Eleve eleve){
+    public Eleve updateEleve(Long id, Eleve eleve){
         return eleveRepository.save(eleve);
     }
 

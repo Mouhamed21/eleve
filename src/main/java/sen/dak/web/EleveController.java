@@ -8,6 +8,7 @@ import sen.dak.service.EleveService;
 import java.util.Collection;
 import java.util.Optional;
 
+@CrossOrigin(origins= "*")
 @RestController
 public class EleveController {
     @Autowired
@@ -25,9 +26,10 @@ public class EleveController {
         return eleveService.addEleve(eleve);
     }
 
-    @PutMapping("/eleve")
-    public Eleve updateEleve(@RequestBody  Eleve eleve){
-        return eleveService.updateEleve(eleve);
+    @PutMapping("/eleve/{id}")
+    public Eleve updateEleve(@RequestBody  Eleve eleve, @PathVariable Long id )
+    {
+        return eleveService.updateEleve(id, eleve);
     }
 
     @DeleteMapping("/eleve/{id}")

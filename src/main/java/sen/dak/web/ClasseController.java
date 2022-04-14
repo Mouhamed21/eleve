@@ -8,6 +8,7 @@ import sen.dak.service.ClasseService;
 import java.util.Collection;
 import java.util.Optional;
 
+@CrossOrigin(origins= "*")
 @RestController
 public class ClasseController {
      @Autowired
@@ -27,9 +28,9 @@ public class ClasseController {
          return classeService.addClasse(classe);
      }
 
-     @PutMapping("/classe")
-    public Classe updateClasse(@RequestBody Classe classe){
-         return classeService.updateClasse(classe);
+     @PutMapping("/classe/{id}")
+    public Classe updateClasse(@PathVariable Long id, @RequestBody Classe classe){
+         return classeService.updateClasse(id, classe);
      }
 
      @DeleteMapping("/classe/{id}")

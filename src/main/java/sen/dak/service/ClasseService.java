@@ -23,7 +23,7 @@ public class ClasseService {
         return classeRepository.findById(id);
     }
 
-    public Classe updateClasse(Classe classe){
+    public Classe updateClasse(Long id,Classe classe){
         return classeRepository.save(classe);
     }
 

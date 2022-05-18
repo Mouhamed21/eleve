@@ -1,57 +1,34 @@
 package sen.dak.entities;
 
-
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 
 import javax.persistence.*;
 //import java.util.Collection;
 
 @Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Eleve {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
      Long id;
-    @Column
      String nom;
-    @Column
-    String prenom;
-    @Column
+     String prenom;
      int age;
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JsonBackReference
-    Classe classe;
-    public Eleve() {
-    }
 
-    public Long getId() {
-        return id;
-    }
+    @JsonIgnoreProperties("eleves")
+    @ManyToOne
+    //@JsonBackReference
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    @JoinColumn
 
-    public String getNom() {
-        return nom;
-    }
+   private Classe classe;
 
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public String getPrenom() {
-        return prenom;
-    }
-
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
 }

@@ -6,6 +6,7 @@ import sen.dak.entities.Classe;
 import sen.dak.service.ClasseService;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 
 @CrossOrigin(origins= "*")
@@ -37,4 +38,14 @@ public class ClasseController {
     public void deleteClasse(@PathVariable Long id){
          classeService.deleteClasse(id);
      }
+
+/*     @DeleteMapping("/classe")
+    public void deleteAllClasse(){
+         classeService.deleteAllClasse();
+     }*/
+
+    @PatchMapping("/classe")
+    public void deleteAllClasse(@RequestBody List<Classe> list){
+        classeService.deleteSelectedClasse(list);
+    }
 }

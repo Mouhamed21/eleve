@@ -5,11 +5,11 @@ import org.springframework.stereotype.Service;
 import sen.dak.entities.Classe;
 import sen.dak.persistence.ClasseRepository;
 
-import java.util.Collection;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class ClasseService {
+    List<Classe> list;
     @Autowired
     ClasseRepository classeRepository;
     public Collection<Classe> getAllClasse(){
@@ -29,5 +29,11 @@ public class ClasseService {
 
     public void deleteClasse(Long id){
         classeRepository.deleteById(id);
+    }
+
+    public void deleteAllClasse(){classeRepository.deleteAll();}
+
+    public void deleteSelectedClasse(List<Classe> list){
+        classeRepository.deleteAll(list);
     }
 }

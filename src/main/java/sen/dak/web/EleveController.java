@@ -41,6 +41,11 @@ public class EleveController {
         eleveService.deleteEleve(id);
     }
 
+    @GetMapping(value = "/eleve/effectifClasse/{classeId}")
+    public ResponseEntity<Eleve> findEffectifClasse(@PathVariable Long classeId){
+        return new ResponseEntity(eleveService.findEffectifClasse(classeId), HttpStatus.OK);
+    }
+
     @GetMapping(value = "/eleve/classe/{classeId}")
     public ResponseEntity<Eleve> getEleveByClasseId(@PathVariable Long classeId){
         return new ResponseEntity(eleveService.getEleveByClasseId(classeId), HttpStatus.OK);

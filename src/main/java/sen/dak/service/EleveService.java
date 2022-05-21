@@ -40,4 +40,7 @@ public class EleveService {
     public List<Eleve> getEleveByClasseId(Long classeId) {
         return eleveRepository.findByClasse(classeId);
     }
+    public int findEffectifClasse(Long classeId) {
+        return eleveRepository.findEffectifClasse(classeId);
+    }
 }

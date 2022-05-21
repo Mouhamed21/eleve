@@ -13,4 +13,7 @@ public interface EleveRepository extends JpaRepository<Eleve, Long> {
 
     @Query(value = "select e from Eleve e where e.classe.id=:classeId")
     public List<Eleve> findByClasse(@Param("classeId") Long classeId);
+
+    @Query(value = "select count(e)  from Eleve e where e.classe.id=:classeId")
+    public int findEffectifClasse(@Param("classeId") Long classeId);
 }

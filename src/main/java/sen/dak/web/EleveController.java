@@ -45,6 +45,10 @@ public class EleveController {
     public ResponseEntity<Eleve> findEffectifClasse(@PathVariable Long classeId){
         return new ResponseEntity(eleveService.findEffectifClasse(classeId), HttpStatus.OK);
     }
+    @GetMapping(value = "/eleve/effectifEcole")
+    public ResponseEntity<Eleve> findEffectifEcole(){
+        return new ResponseEntity(eleveService.findEffectifEcole(), HttpStatus.OK);
+    }
 
     @GetMapping(value = "/eleve/classe/{classeId}")
     public ResponseEntity<Eleve> getEleveByClasseId(@PathVariable Long classeId){

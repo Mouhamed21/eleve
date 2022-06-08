@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 
 import javax.persistence.*;
+import java.util.Date;
 //import java.util.Collection;
 
 @Entity
@@ -15,10 +16,23 @@ import javax.persistence.*;
 public class Eleve {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-     Long id;
-     String nom;
-     String prenom;
-     int age;
+     private Long id;
+     @Column(nullable = false)
+     private String nom;
+     @Column(nullable = false)
+     private String prenom;
+     @Column(nullable = false)
+     private Date dateNaissance;
+     @Column(nullable = false)
+     private String LieuNaissance;
+    @Column(unique = true)
+     private String email;
+     @Column(nullable = false)
+     private String adresse;
+    @Column(unique = true)
+    private String Telephone;
+    @Column(unique = true)
+    private String NumeroContact;
 
     @JsonIgnoreProperties("eleves")
     @ManyToOne

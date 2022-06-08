@@ -43,4 +43,8 @@ public class EleveService {
     public int findEffectifClasse(Long classeId) {
         return eleveRepository.findEffectifClasse(classeId);
     }
+    public int findEffectifEcole()
+    {
+        return eleveRepository.findEffectifEcole();
+    }
 }

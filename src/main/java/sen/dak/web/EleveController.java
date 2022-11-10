@@ -23,7 +23,7 @@ public class EleveController {
     }
 
     @GetMapping("/eleve/{id}")
-    public Optional<Eleve> getEleve(@PathVariable Long id) {return eleveService.getEleve(id); }
+    public Eleve getEleve(@PathVariable Long id) {return eleveService.getEleve(id); }
 
     @PostMapping("/eleve")
     public Eleve addEleve(@RequestBody Eleve eleve){

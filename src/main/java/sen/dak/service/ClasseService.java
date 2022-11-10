@@ -19,8 +19,8 @@ public class ClasseService {
         return classeRepository.save(classe);
     }
 
-    public Optional<Classe>  getClasse(Long id){
-        return classeRepository.findById(id);
+    public Classe  getClasse(Long id){
+        return classeRepository.findById(id).get();
     }
 
     public Classe updateClasse(Long id,Classe classe){

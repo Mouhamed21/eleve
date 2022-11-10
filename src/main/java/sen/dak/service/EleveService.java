@@ -18,8 +18,8 @@ public class EleveService {
         return eleveRepository.findAll();
     }
 
-    public Optional<Eleve> getEleve(Long id){
-        return eleveRepository.findById(id);
+    public Eleve getEleve(Long id){
+        return eleveRepository.findById(id).get();
     }
 
     public Eleve addEleve(Eleve eleve){

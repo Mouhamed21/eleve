@@ -20,7 +20,7 @@ public class ClasseController {
      }
 
      @GetMapping("/classe/{id}")
-     public Optional<Classe> getClasse(@PathVariable Long id){
+     public Classe getClasse(@PathVariable Long id){
          return classeService.getClasse(id);
      }
 

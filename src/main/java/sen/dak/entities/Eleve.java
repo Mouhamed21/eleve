@@ -38,8 +38,7 @@ public class Eleve {
     @ManyToOne
     //@JsonBackReference
 
-    @JoinColumn
-
+    @JoinColumn(nullable = false)
    private Classe classe;
 
 }

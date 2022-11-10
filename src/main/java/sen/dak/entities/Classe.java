@@ -20,9 +20,16 @@ public class Classe {
     @Column(nullable = false)
     String nom;
 
+
+
     @JsonIgnoreProperties("classe")
     @OneToMany(mappedBy = "classe")
    //@JsonManagedReference
     Collection<Eleve> eleves;
+
+    @JsonIgnoreProperties("classe")
+    @ManyToOne
+    @JoinColumn
+    private Niveau niveau;
 
 }

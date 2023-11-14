@@ -23,8 +23,8 @@ public class Niveau {
     @Column(name = "nom", nullable = false, unique = true)
     private String nom;
 
-    @Column()
-    String annee;
+  /*  @Column()
+    String annee;*/
 
     @JsonIgnoreProperties("niveau")
     @OneToMany(mappedBy = "niveau")

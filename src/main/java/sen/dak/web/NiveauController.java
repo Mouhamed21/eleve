@@ -2,7 +2,6 @@ package sen.dak.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import sen.dak.entities.Classe;
 import sen.dak.entities.Niveau;
 import sen.dak.service.NiveauService;
 

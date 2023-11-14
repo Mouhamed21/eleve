@@ -4,13 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import sen.dak.entities.Classe;
 import sen.dak.entities.Eleve;
 import sen.dak.service.EleveService;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.Optional;
 
 @CrossOrigin(origins= "*")
 @RestController

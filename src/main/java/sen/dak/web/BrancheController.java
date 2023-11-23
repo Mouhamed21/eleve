@@ -4,8 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import sen.dak.entities.Branche;
 import sen.dak.service.BrancheService;
-
-
 import java.util.Collection;
 import java.util.List;
 

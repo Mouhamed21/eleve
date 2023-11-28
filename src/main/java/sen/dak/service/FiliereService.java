@@ -1,10 +1,8 @@
 package sen.dak.service;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sen.dak.entities.Filiere;
 import sen.dak.persistence.FiliereRepository;
-
 import java.util.Collection;
 import java.util.List;
 

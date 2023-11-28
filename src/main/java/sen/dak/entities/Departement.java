@@ -1,18 +1,17 @@
 package sen.dak.entities;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Collection;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "secteur")
-public class Secteur {
+@Table(name = "departement")
+public class Departement {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -20,8 +19,4 @@ public class Secteur {
 
     @Column(name = "libelle", nullable = false, unique = true)
     private String libelle;
-
-    @JsonIgnoreProperties("secteur")
-    @OneToMany(mappedBy = "secteur")
-    private Collection<Metier> metier = new ArrayList<>();
 }

@@ -33,12 +33,12 @@ public class DepartementController {
     }
 
     @PatchMapping("/departement")
-    public void deleteAllDepartementr(@RequestBody List<Departement> list){
+    public void deleteAllDepartement(@RequestBody List<Departement> list){
         departementService.deleteSelectedDepartement(list);
     }
 
     @DeleteMapping("/departement/{id}")
-    public void deleteSecteur(@PathVariable Long id){
+    public void deleteDepartement(@PathVariable Long id){
         departementService.deleteDepartement(id);
     }
 }

@@ -7,13 +7,12 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "departement")
-public class Departement {
+@Table(name = "inspectionAcademie")
+public class InspectionAcademie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -22,8 +21,9 @@ public class Departement {
     @Column(name = "libelle", nullable = false, unique = true)
     private String libelle;
 
-    @JsonIgnoreProperties("departement")
+    @JsonIgnoreProperties("inspectionAcademie")
     @ManyToOne
     @JoinColumn
     private Region region;
+
 }

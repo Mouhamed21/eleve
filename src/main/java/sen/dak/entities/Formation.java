@@ -1,29 +1,31 @@
 package sen.dak.entities;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
-
+import java.util.Date;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "departement")
-public class Departement {
+@Table(name = "formation")
+public class Formation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
     private Long id;
-
-    @Column(name = "libelle", nullable = false, unique = true)
+    @Column(nullable = false)
     private String libelle;
+    @Column(nullable = false)
+    private int duree;
+    @Column(nullable = false)
+    private Date dateDebut;
+    @Column(nullable = true)
+    private Date dateFinPrevue;
 
-    @JsonIgnoreProperties("departement")
+    @JsonIgnoreProperties("formation")
     @ManyToOne
     @JoinColumn
-    private Region region;
+    private ResponsableFormation responsableFormation;
 }

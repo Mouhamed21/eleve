@@ -19,12 +19,12 @@ public class DepartementService {
         return departementRepository.findById(id).get();
     }
 
-    public Departement addDepartement(Departement secteur){
-        return departementRepository.save(secteur);
+    public Departement addDepartement(Departement departement){
+        return departementRepository.save(departement);
     }
 
-    public Departement updateDepartement(Long id, Departement secteur){
-        return departementRepository.save(secteur);
+    public Departement updateDepartement(Long id, Departement departement){
+        return departementRepository.save(departement);
     }
 
     public void deleteDepartement(Long id){

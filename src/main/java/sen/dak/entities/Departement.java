@@ -1,5 +1,4 @@
 package sen.dak.entities;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,8 +21,8 @@ public class Departement {
     @Column(name = "libelle", nullable = false, unique = true)
     private String libelle;
 
-    @JsonIgnoreProperties("departement")
+    @JsonIgnoreProperties({"departement","inspectionAcademie"})
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(nullable = false)
     private Region region;
 }

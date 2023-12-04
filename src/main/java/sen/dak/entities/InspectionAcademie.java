@@ -21,7 +21,7 @@ public class InspectionAcademie {
     @Column(name = "libelle", nullable = false, unique = true)
     private String libelle;
 
-    @JsonIgnoreProperties("inspectionAcademie")
+    @JsonIgnoreProperties({"inspectionAcademie","departement"})
     @ManyToOne
     @JoinColumn
     private Region region;

@@ -24,7 +24,7 @@ public class Region {
     @OneToMany(mappedBy = "region")
     private Collection<Departement> departement = new ArrayList<>();
 
-    @JsonIgnoreProperties("region")
+    @JsonIgnoreProperties({"region"})
     @OneToMany(mappedBy = "region")
-    private Collection<InspectionAcademie> inspectionacademie = new ArrayList<>();
+    private Collection<InspectionAcademie> inspectionAcademie = new ArrayList<>();
 }

@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 
 @Entity
@@ -28,4 +30,8 @@ public class Formation {
     @ManyToOne
     @JoinColumn
     private ResponsableFormation responsableFormation;
+
+    @JsonIgnoreProperties("formation")
+    @OneToMany(mappedBy = "formation")
+    private Collection<Apprenant> apprenant = new ArrayList<>();
 }

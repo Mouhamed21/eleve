@@ -35,7 +35,7 @@ public class BrancheService {
         brancheRepository.deleteById(id);
     }
 
-    public void deleteSelectedSecteur(List<Branche> list){
+    public void deleteSelectedBranche(List<Branche> list){
         brancheRepository.deleteAll(list);
     }
 

@@ -35,7 +35,7 @@ public class BrancheController {
 
     @PatchMapping("/branche")
     public void deleteAllBranche(@RequestBody List<Branche> list){
-        brancheService.deleteSelectedSecteur(list);
+        brancheService.deleteSelectedBranche(list);
     }
 
     @DeleteMapping("/branche/{id}")

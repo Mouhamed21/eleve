@@ -32,6 +32,7 @@ public class Niveau {
         return classe;
     }
 
+
 /*    public void setClasse(Collection<Classe> classe) {
         this.classe = classe;
     }

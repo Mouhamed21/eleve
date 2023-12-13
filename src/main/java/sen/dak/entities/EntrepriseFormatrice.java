@@ -1,10 +1,13 @@
 package sen.dak.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Collection;
 
 @Entity
 @Data
@@ -22,4 +25,8 @@ public class EntrepriseFormatrice {
 
     @Column(name = "adresse", nullable = true)
     private String adresse;
+
+    @JsonIgnoreProperties("entrepriseFormatrice")
+    @OneToMany(mappedBy = "entrepriseFormatrice")
+    private Collection<Apprenant> apprenant = new ArrayList<>();
 }
